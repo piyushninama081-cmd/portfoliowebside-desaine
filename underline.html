@@ -1,0 +1,42 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Center Expand Underline</title>
+  <style>
+    .hover-underline-center {
+      position: relative;
+      display: inline-block;
+      color: #333;
+      font-size: 24px;
+      text-decoration: none;
+    }
+
+     hidden line initially 
+    .hover-underline-center::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #FF5733; /* line color */
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s ease;
+    }
+
+    
+    .hover-underline-center:hover::after {
+      transform: scaleX(1);
+    }
+  </style>
+</head>
+<body>
+  <p>
+    <a href="#" class="hover-underline-center">Hover karo aur center se underline dekho</a>
+  </p>
+</body>
+</html>

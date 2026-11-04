@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f5f7fb;
+    color: #172b4d;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    font-size: 25px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #172b4d;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff4d4d;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 90vh;
+    padding: 80px 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    background-color: white;
+}
+
+
+/* Profile Image */
+
+.profile {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    padding: 8px;
+    border: 3px solid #ff4d4d;
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* Introduction */
+
+.intro {
+    max-width: 550px;
+}
+
+.small-text {
+    color: #ff4d4d;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.intro h1 {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.intro h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.intro h2 span {
+    color: #ff4d4d;
+}
+
+.intro p {
+    color: #687386;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+
+/* Button */
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 14px 28px;
+    background-color: #ff4d4d;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(255, 77, 77, 0.3);
+}
+
+
+/* ================= ABOUT ================= */
+
+.about {
+    text-align: center;
+    padding: 80px 15%;
+}
+
+.about h2,
+.websites h2,
+.skills h2,
+.contact h2 {
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+.about p {
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.8;
+    color: #687386;
+}
+
+
+/* ================= WEBSITES ================= */
+
+.websites {
+    padding: 80px 8%;
+    text-align: center;
+    background-color: white;
+}
+
+.website-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.website-card {
+    width: 300px;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+.website-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.website-icon {
+    font-size: 45px;
+    color: #ff4d4d;
+    margin-bottom: 20px;
+}
+
+.website-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.website-card p {
+    color: #687386;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.visit-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #172b4d;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.visit-btn:hover {
+    background-color: #ff4d4d;
+}
+
+
+/* ================= SKILLS ================= */
+
+.skills {
+    text-align: center;
+    padding: 80px 8%;
+}
+
+.skill-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.skill {
+    width: 180px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.skill:hover {
+    transform: scale(1.05);
+}
+
+.skill i {
+    font-size: 45px;
+    color: #ff4d4d;
+    margin-bottom: 15px;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: white;
+}
+
+.contact p {
+    color: #687386;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #172b4d;
+    color: white;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        padding: 60px 20px;
+    }
+
+    .profile {
+        width: 220px;
+        height: 220px;
+    }
+
+    .intro h1 {
+        font-size: 40px;
+    }
+
+    .intro h2 {
+        font-size: 22px;
+    }
+
+}
+
+    </style>
+</head>
+<body>
+      <!-- Navbar -->
+    <nav class="navbar">
+
+        <h2 class="logo">MyPortfolio</h2>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#websites">Websites</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Introduction Section -->
+    <section class="hero" id="home">
+
+        <!-- Profile Photo -->
+        <div class="profile">
+            <img src="box1.webp" alt="My Photo">
+        </div>
+
+
+        <!-- Introduction -->
+        <div class="intro">
+
+            <p class="small-text">HELLO, I AM</p>
+
+            <h1>Welcom to my job</h1>
+
+            <h2>
+                
+                <span>to bravo's blog</span>
+            </h2>
+
+            <p>
+                Hello! My name is Piyush. I am learning web development
+                and I enjoy creating modern and responsive websites
+                using HTML, CSS and JavaScript.
+            </p>
+
+            <p>
+                I love designing beautiful user interfaces and creating
+                websites that are simple, attractive and easy to use.
+            </p>
+
+            <a href="#websites" class="btn">
+                My Websites
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about" id="about">
+
+        <h2>About Me</h2>
+
+        <p>
+            I am passionate about web development and website designing.
+            I create different types of websites for learning and practice.
+            My goal is to improve my coding skills and become a professional
+            web developer.
+        </p>
+
+    </section>
+
+
+    <!-- Websites Section -->
+    <section class="websites" id="websites">
+
+        <h2>My Websites & Projects</h2>
+
+        <div class="website-container">
+
+
+            <!-- Website 1 -->
+            <div class="website-card">
+
+                <div class="website-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+
+                <h3>E-Commerce Website</h3>
+
+                <p>
+                    I created an e-commerce website where users can
+                    explore products, categories and product details.
+                    The website has a modern navigation bar and
+                    responsive design.
+                </p>
+
+                <a href="ecommerce.html" class="visit-btn">
+                    Visit Website
+                </a>
+
+            </div>
+
+
+            <!-- Website 2 -->
+            <div class="website-card">
+
+                <div class="website-icon">
+                    <i class="fa-solid fa-hospital"></i>
+                </div>
+
+                <h3>Hospital Management</h3>
+
+                <p>
+                    This website is designed for hospital management.
+                    It includes patient registration, doctor management,
+                    appointments and other useful features.
+                </p>
+
+                <a href="hospital.html" class="visit-btn">
+                    Visit Website
+                </a>
+
+            </div>
+
+
+            <!-- Website 3 -->
+            <div class="website-card">
+
+                <div class="website-icon">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+
+                <h3>Personal Portfolio</h3>
+
+                <p>
+                    I created a personal portfolio website to showcase
+                    my skills, projects and web development work.
+                    The design is clean, modern and responsive.
+                </p>
+
+                <a href="portfolio.html" class="visit-btn">
+                    Visit Website
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+
+        <h2>My Skills</h2>
+
+        <div class="skill-container">
+
+            <div class="skill">
+                <i class="fa-brands fa-html5"></i>
+                <h3>HTML</h3>
+            </div>
+
+            <div class="skill">
+                <i class="fa-brands fa-css3-alt"></i>
+                <h3>CSS</h3>
+            </div>
+
+            <div class="skill">
+                <i class="fa-brands fa-js"></i>
+                <h3>JavaScript</h3>
+            </div>
+
+            <div class="skill">
+                <i class="fa-brands fa-github"></i>
+                <h3>GitHub</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+
+        <h2>Contact Me</h2>
+
+        <p>
+            If you want to know more about my projects or websites,
+            feel free to contact me.
+        </p>
+
+        <a href="mailto:example@gmail.com" class="btn">
+            Contact Me
+        </a>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Piyush | All Rights Reserved
+        </p>
+
+    </footer>
+
+</body>
+</html>

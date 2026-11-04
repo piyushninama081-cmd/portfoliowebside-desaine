@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>live preview4</title>
+    <style>/* Google Font */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+
+/* Basic CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background-color: #b57e1d;
+
+    color: white;
+
+    font-family: "Manrope", sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* Background Effect */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 45%,
+            rgba(255, 113, 58, 0.06),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(60, 70, 100, 0.08),
+            transparent 25%
+        );
+
+    pointer-events: none;
+
+}
+
+
+/* Navbar */
+
+header {
+
+    width: 100%;
+
+    position: relative;
+
+    z-index: 10;
+
+}
+
+
+.navbar {
+
+    width: 86%;
+
+    max-width: 1180px;
+
+    margin: auto;
+
+    height: 85px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+/* Logo */
+
+.logo {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+    letter-spacing: -1px;
+
+}
+
+
+.logo span {
+
+    color: #ff7440;
+
+}
+
+
+/* Navbar Links */
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 34px;
+
+    list-style: none;
+
+}
+
+
+.nav-links a {
+
+    color: #a4a6ad;
+
+    text-decoration: none;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    transition: 0.3s;
+
+}
+
+
+.nav-links a:hover {
+
+    color: #ff7440;
+
+}
+
+
+/* Menu Icon */
+
+.menu-icon {
+
+    width: 28px;
+
+    height: 28px;
+
+    border: 1px solid #30333b;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #ff7440;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.menu-icon:hover {
+
+    background-color: #ff7440;
+
+    color: white;
+
+}
+
+
+/* Hero Section */
+
+.hero {
+
+    width: 86%;
+
+    max-width: 1180px;
+
+    min-height: 650px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 70px;
+
+}
+
+
+/* Left Content */
+
+.hero-content {
+
+    width: 55%;
+
+    padding-top: 25px;
+
+}
+
+
+.small-title {
+
+    color: #ff7440;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.hero-content h1 {
+
+    font-size: 58px;
+
+    font-weight: 800;
+
+    line-height: 1.1;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.hero-content h1 span {
+
+    color: #ff7440;
+
+}
+
+
+/* Description */
+
+.description {
+
+    width: 460px;
+
+    max-width: 100%;
+
+    color: #8c9099;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+
+}
+
+
+/* Buttons */
+
+.buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 55px;
+
+}
+
+
+.primary-btn {
+
+    background-color: #f4f4f4;
+
+    color: #111318;
+
+    padding: 15px 23px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+
+}
+
+
+.primary-btn span {
+
+    margin-left: 12px;
+
+    font-size: 15px;
+
+}
+
+
+.primary-btn:hover {
+
+    background-color: #ff7440;
+
+    color: white;
+
+    transform: translateY(-4px);
+
+}
+
+
+.secondary-btn {
+
+    color: #a9abb2;
+
+    border: 1px solid #343740;
+
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    transition: 0.3s;
+
+}
+
+
+.secondary-btn:hover {
+
+    color: white;
+
+    border-color: #ff7440;
+
+    transform: translateY(-4px);
+
+}
+
+
+/* Statistics */
+
+.statistics {
+
+    width: 500px;
+
+    max-width: 100%;
+
+    border-top: 1px solid #1c1f26;
+
+    padding-top: 27px;
+
+    display: flex;
+
+    gap: 55px;
+
+}
+
+
+.stat-box {
+
+    min-width: 70px;
+
+}
+
+
+.stat-box h2 {
+
+    color: #e9e9ea;
+
+    font-size: 20px;
+
+    font-family: "DM Mono", monospace;
+
+    font-weight: 500;
+
+    margin-bottom: 8px;
+
+}
+
+
+.stat-box p {
+
+    color: #62666f;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* Image Section */
+
+.image-section {
+
+    width: 40%;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+}
+
+
+.image-box {
+
+    width: 330px;
+
+    height: 420px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 16px 0 0 0;
+
+    background-color: #252932;
+
+}
+
+
+/* Profile Image */
+
+.image-box img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    filter: contrast(1.03);
+
+    transition: 0.5s;
+
+}
+
+
+.image-box:hover img {
+
+    transform: scale(1.06);
+
+}
+
+
+/* Orange Tag */
+
+.image-tag {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    background-color: #ff7440;
+
+    color: white;
+
+    padding: 12px 18px;
+
+    border-radius: 0 10px 0 0;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+}
+
+
+/* Tablet Responsive */
+
+@media (max-width: 900px) {
+
+    .navbar {
+
+        width: 90%;
+
+    }
+
+
+    .nav-links {
+
+        gap: 17px;
+
+    }
+
+
+    .hero {
+
+        width: 90%;
+
+        gap: 35px;
+
+    }
+
+
+    .hero-content h1 {
+
+        font-size: 45px;
+
+    }
+
+
+    .image-box {
+
+        width: 270px;
+
+        height: 370px;
+
+    }
+
+}
+
+
+/* Mobile Responsive */
+
+@media (max-width: 700px) {
+
+    .navbar {
+
+        height: 70px;
+
+    }
+
+
+    .nav-links {
+
+        display: none;
+
+    }
+
+
+    .hero {
+
+        min-height: auto;
+
+        padding: 70px 0;
+
+        flex-direction: column-reverse;
+
+        align-items: flex-start;
+
+        gap: 50px;
+
+    }
+
+
+    .hero-content {
+
+        width: 100%;
+
+        padding-top: 0;
+
+    }
+
+
+    .image-section {
+
+        width: 100%;
+
+        justify-content: center;
+
+    }
+
+
+    .image-box {
+
+        width: 100%;
+
+        max-width: 380px;
+
+        height: 400px;
+
+    }
+
+
+    .hero-content h1 {
+
+        font-size: 43px;
+
+        letter-spacing: -2px;
+
+    }
+
+
+    .description {
+
+        font-size: 13px;
+
+    }
+
+
+    .statistics {
+
+        gap: 25px;
+
+    }
+
+
+    .buttons {
+
+        flex-wrap: wrap;
+
+    }
+
+}</style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                el<span>io</span>tt
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#">Home</a>
+                </li>
+
+                <li>
+                    <a href="#">Work</a>
+                </li>
+
+                <li>
+                    <a href="#">About</a>
+                </li>
+
+                <li>
+                    <a href="#">Services</a>
+                </li>
+
+                <li>
+                    <a href="#">Blog</a>
+                </li>
+
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+
+            </ul>
+
+            <div class="menu-icon">
+                ☰
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- Navbar End -->
+
+
+    <!-- Main Section Start -->
+
+    <main>
+
+        <section class="hero">
+
+            <!-- Left Content -->
+
+            <div class="hero-content">
+
+                <p class="small-title">
+                    AVAILABLE FOR WORK
+                </p>
+
+                <h1>
+                    Hi, I'm <span>Eliott</span>
+                </h1>
+
+                <p class="description">
+
+                    I'm a London based designer & frontend
+                    developer. I design and build digital products
+                    that people love to use.
+
+                </p>
+
+
+                <div class="buttons">
+
+                    <a href="#" class="primary-btn">
+                        View my work
+                        <span>→</span>
+                    </a>
+
+                    <a href="#" class="secondary-btn">
+                        Get in touch
+                    </a>
+
+                </div>
+
+
+                <!-- Statistics -->
+
+                <div class="statistics">
+
+                    <div class="stat-box">
+
+                        <h2>34+</h2>
+
+                        <p>PROJECTS</p>
+
+                    </div>
+
+
+                    <div class="stat-box">
+
+                        <h2>21+</h2>
+
+                        <p>HAPPY CLIENTS</p>
+
+                    </div>
+
+
+                    <div class="stat-box">
+
+                        <h2>5y</h2>
+
+                        <p>EXPERIENCE</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Right Image -->
+
+            <div class="image-section">
+
+                <div class="image-box">
+
+                    <img src="box4.webp" alt="Protfile Image">
+
+                    <div class="image-tag">
+                        Open to work
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
+</body>
+</html>
